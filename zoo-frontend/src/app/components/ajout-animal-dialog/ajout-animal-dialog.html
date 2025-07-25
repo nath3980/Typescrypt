@@ -1,0 +1,25 @@
+<p>ajout-animal-dialog works!</p>
+<h2>Ajouter un animal</h2>
+<form #animalForm="ngForm">
+  <mat-form-field appearance="fill" style="width: 100%;">
+    <mat-label>Nom</mat-label>
+    <input matInput name="name" [(ngModel)]="animal.name" required />
+  </mat-form-field>
+
+  <mat-form-field appearance="fill" style="width: 100%;">
+    <mat-label>Espèce</mat-label>
+    <input matInput name="species" [(ngModel)]="animal.species" required />
+  </mat-form-field>
+
+  <mat-form-field appearance="fill" style="width: 100%;">
+    <mat-label>Santé</mat-label>
+    <input matInput type="number" name="health" [(ngModel)]="animal.health" required />
+  </mat-form-field>
+
+  <div style="text-align: right; margin-top: 16px;">
+    <button mat-button type="button" (click)="onCancel()">Annuler</button>
+    <button mat-raised-button color="primary" type="button" (click)="onAdd()" [disabled]="!animalForm.form.valid">
+      Ajouter
+    </button>
+  </div>
+</form>
